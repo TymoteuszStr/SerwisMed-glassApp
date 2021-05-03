@@ -1,10 +1,19 @@
 <template>
  <div class="wrapper">
-   <div class="glass"></div>
+ <Glass />
  </div>
 
 </template>
 
+<script>
+import Glass from '@/components/Glass.vue'
+export default {
+name: 'App',
+components:{
+  Glass
+}
+}
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -23,15 +32,6 @@
   display: flex;
   align-items: center;
 
-  .glass{
-    min-height: 90vh;
-    width: 80%;
-    background: linear-gradient(to right bottom , rgba(255,255,255,0.7),rgba(255,255,255,0.3));
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 15px;
-  }
-  
 }
 
 </style>

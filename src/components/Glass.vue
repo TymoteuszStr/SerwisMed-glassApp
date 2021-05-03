@@ -1,15 +1,13 @@
 <template>
-  
+   <div class="glass"></div>
 </template>
 
 <script>
 export default {
-
+name: 'Glass'
 }
 </script>
-
 <style lang="scss" scoped="true">
-
   .glass{
     min-height: 90vh;
     width: 80%;
