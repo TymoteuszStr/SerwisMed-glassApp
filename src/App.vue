@@ -1,9 +1,8 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view />
+ <div class="wrapper">
+   <div class="glass"></div>
+ </div>
+
 </template>
 
 <style lang="scss">
@@ -11,20 +10,28 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapper{
+  min-height: 100vh;
+  background: linear-gradient(to right top, #2596be, #6cdbeb);
+  display: flex;
+  align-items: center;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  .glass{
+    min-height: 90vh;
+    width: 80%;
+    background: linear-gradient(to right bottom , rgba(255,255,255,0.7),rgba(255,255,255,0.3));
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
   }
+  
 }
+
 </style>
