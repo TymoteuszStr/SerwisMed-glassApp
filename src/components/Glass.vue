@@ -1,11 +1,16 @@
 <template>
-   <div class="glass"></div>
+   <div class="glass">
+       <Dashboard />
+   </div>
 </template>
 
 <script>
+import Dashboard from '@/components/Dashboard.vue'
 export default {
 name: 'Glass',
-
+components:{
+    Dashboard,
+}
 }
 </script>
 <style lang="scss" scoped="true">
