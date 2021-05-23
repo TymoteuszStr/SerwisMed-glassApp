@@ -1,24 +1,18 @@
 <template>
- <div class="wrapper">
- <Glass />
- <Circle :size="300" style="bottom:50px; left:150px;"/>
- <Circle :size="340" style="top:50px; right:150px;"/>
- </div>
-
+  <Home />
 </template>
 
 <script>
-import Glass from '@/components/Glass.vue'
-import Circle from '@/components/Circle.vue'
+import Home from "@/views/Home.vue";
 export default {
-name: 'App',
-components:{
-  Glass,Circle
-}
-}
+  name: "App",
+  components: {
+    Home,
+  },
+};
 </script>
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;600&display=swap");
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -26,17 +20,9 @@ components:{
   -moz-osx-font-smoothing: grayscale;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.wrapper{
-  min-height: 100vh;
-  background: linear-gradient(to right top, #2596be, #6cdbeb);
-  display: flex;
-  align-items: center;
-
-}
-
 </style>
