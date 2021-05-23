@@ -19,8 +19,10 @@ props:{
 .circle{
     background-color:white;
     background: linear-gradient(rgba(255,255,255,.8),rgba(255,255,255, .3));
-    position: absolute;
+    position: fixed;
     border-radius:50%;
     z-index: 2;
+    overflow: hidden;
 }
+
 </style>

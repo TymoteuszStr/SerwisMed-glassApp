@@ -24,4 +24,11 @@ components:{
     z-index: 10;
     backdrop-filter: blur(24px);
   }
+  
+  @media (max-width:1280px)
+  {
+    .glass{
+    width: 80vw;
+    }
+  }
 </style>

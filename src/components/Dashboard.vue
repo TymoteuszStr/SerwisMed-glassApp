@@ -1,38 +1,38 @@
 <template>
-<div class="dashboard">
+  <div class="dashboard">
     <Who />
     <Nav />
-</div>
+  </div>
 </template>
 
 <script>
-import Nav from "./Nav.vue"
-import Who from "./Who.vue"
+import Nav from "./Nav.vue";
+import Who from "./Who.vue";
 
 export default {
-    name: 'Dashboard',
-    components: {
-        Who,
-        Nav,
-    }
+  name: "Dashboard",
+  components: {
+    Who,
+    Nav,
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .dashboard {
-    min-height: inherit;
-    width: 30% !important;
-    position: relative;
-    top: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: inherit;
-
+  min-height: inherit;
+  width: 380px;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: inherit;
 }
 
-@media (max-width: 678px) {
-    .dashboard {
-        display: none;
-    }
+@media (max-width: 1280px) {
+  .dashboard {
+    width: 80vw;
+
+  }
 }
 </style>
