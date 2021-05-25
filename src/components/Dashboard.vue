@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard">
     <Who />
-    <Nav />
+    <Nav @navNr="emitNavNr" />
   </div>
 </template>
 
@@ -15,13 +15,19 @@ export default {
     Who,
     Nav,
   },
+  setup(props, { emit }) {
+    const emitNavNr = ($event) => {
+      emit("navNr", $event);
+    };
+    return { emitNavNr };
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .dashboard {
   min-height: inherit;
-  width: 380px;
+  min-width: 380px;
   position: relative;
   top: 0;
   left: 0;
@@ -31,8 +37,9 @@ export default {
 
 @media (max-width: 1280px) {
   .dashboard {
-    width: 80vw;
-
+    max-width: 80vw;
+    height: auto;
+      min-width: 100px;
   }
 }
 </style>
