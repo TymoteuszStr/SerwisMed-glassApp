@@ -45,7 +45,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/common/variables.scss";
+
 .navList {
+  @include noselect;
   list-style: none;
   max-width: 100%;
   display: flex;

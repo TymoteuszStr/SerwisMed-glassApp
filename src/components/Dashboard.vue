@@ -25,7 +25,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/common/variables.scss";
 .dashboard {
+  @include noselect;
   min-height: inherit;
   min-width: 380px;
   position: relative;
@@ -39,7 +41,7 @@ export default {
   .dashboard {
     max-width: 80vw;
     height: auto;
-      min-width: 100px;
+    min-width: 100px;
   }
 }
 </style>
