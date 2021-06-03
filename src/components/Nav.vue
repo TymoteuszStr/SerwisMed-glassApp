@@ -1,17 +1,17 @@
 <template>
   <ul class="navList">
-      <li
-        v-for="(item, index) in navList"
-        :key="index"
-        class="navItem"
-        @click="emitNavNr(index)"
-        :class="{ activeItem: currentPage === index }"
-      >
-        {{ item }}
-        <transition name="show">
-          <Description v-if="currentPage === index && showText" :textNr="currentPage" />
-        </transition>
-      </li>
+    <li
+      v-for="(item, index) in navList"
+      :key="index"
+      class="navItem"
+      @click="navClickHandle(index)"
+      :class="{ activeItem: currentPage === index }"
+    >
+      {{ item }}
+      <transition name="show">
+        <Description v-if="currentPage === index && showText" :textNr="currentPage" />
+      </transition>
+    </li>
   </ul>
 </template>
 
@@ -24,14 +24,22 @@ export default {
   components: { Description },
   setup(props, { emit }) {
     const navList = ["O mnie", "Usługi", "Kontakt"];
-    let currentPage = ref(0);
+    let currentPage = ref(null);
+    const showText = window.innerWidth < 1280 ? true : false;
+
+    const hideDescription = () => {
+      currentPage.value = null;
+    };
     const emitNavNr = (index) => {
       currentPage.value = index;
       emit("navNr", currentPage.value);
     };
-   const showText = window.innerWidth <1280? true:false
 
-    return { navList, emitNavNr, currentPage,showText };
+    const navClickHandle = (index) => {
+      if (currentPage.value === index) hideDescription();
+      else emitNavNr(index);
+    };
+    return { navList, currentPage, showText, navClickHandle };
   },
 };
 </script>
