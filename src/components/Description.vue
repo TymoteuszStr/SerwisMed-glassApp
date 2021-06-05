@@ -49,18 +49,19 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: 100px 150px;
+  margin: 100px 60px;
+  overflow-y: auto;
   .text {
     position: relative;
     top: 0;
     left: 0;
-    padding: 20px 0;
-    font-size: 24px;
+    padding: 10px 0;
+    font-size: 22px;
     font-weight: 600;
     color: rgb(7, 70, 95);
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 959px) {
   .textWrapper {
     background: linear-gradient(
       to right bottom,
@@ -70,6 +71,7 @@ export default {
     top: auto;
     left: 0;
     height: 400px;
+    width: inherit;
     margin: 0;
     text-align: center;
     overflow-y: scroll;

@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard">
     <Who />
-    <Nav @navNr="emitNavNr" />
+    <Nav class="nav" @navNr="emitNavNr" />
   </div>
 </template>
 
@@ -37,15 +37,23 @@ export default {
   border-radius: inherit;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 959px) {
   .dashboard {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: inherit;
     min-width: initial;
     background-color: rgba(255, 255, 255, 0);
     height: auto;
+    .nav {
+      width: inherit;
+    }
+  }
+}
+@media (max-width: 1280px) {
+  .dashboard {
+    min-width: 280px;
   }
 }
 </style>

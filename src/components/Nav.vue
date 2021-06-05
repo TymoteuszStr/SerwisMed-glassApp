@@ -25,7 +25,7 @@ export default {
   setup(props, { emit }) {
     const navList = ["O mnie", "Usługi", "Kontakt"];
     let currentPage = ref(null);
-    const showText = window.innerWidth < 1280 ? true : false;
+    const showText = ref(window.innerWidth < 960 ? true : false);
 
     const hideDescription = () => {
       currentPage.value = null;
@@ -39,6 +39,12 @@ export default {
       if (currentPage.value === index) hideDescription();
       else emitNavNr(index);
     };
+
+    const toggleMobileView = () => {
+      showText.value = window.innerWidth >= 960 ? true : false;
+    };
+
+    window.addEventListener("resize", toggleMobileView);
     return { navList, currentPage, showText, navClickHandle };
   },
 };
@@ -72,12 +78,13 @@ export default {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 959px) {
   .navList {
     .navItem {
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
     }
   }
 }

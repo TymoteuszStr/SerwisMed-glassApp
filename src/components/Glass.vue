@@ -20,8 +20,14 @@ export default {
     const setCurrentPage = ($event) => {
       currentPage.value = $event;
     };
-    const showText = window.innerWidth >= 1280 ? true : false;
+    let showText = ref(window.innerWidth >= 960 ? true : false);
 
+    const toggleMobileView = () => {
+      showText.value = window.innerWidth >= 960 ? true : false;
+      console.log("test");
+    };
+
+    window.addEventListener("resize", toggleMobileView);
     return { setCurrentPage, currentPage, showText };
   },
 };
@@ -41,14 +47,16 @@ export default {
   border-radius: 20px;
   z-index: 10;
   backdrop-filter: blur(24px);
+  max-height: 80vh;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 959px) {
   .glass {
     width: 80%;
-
+    max-height: initial;
     .dashboard {
       width: 100%;
+      max-height: initial;
     }
   }
 }
