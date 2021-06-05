@@ -72,7 +72,7 @@ export default {
   }
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1024px) {
   .navList {
     .navItem {
       display: flex;
@@ -85,7 +85,7 @@ export default {
 //animation
 .show-enter-active,
 .show-leave-active {
-  transition: all 0.3s ease-out;
+  transition: all 0.4s ease-out;
 }
 .show-enter-from,
 .show-leave-to {

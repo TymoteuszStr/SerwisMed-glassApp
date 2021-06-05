@@ -37,11 +37,15 @@ export default {
   border-radius: inherit;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1024px) {
   .dashboard {
-    max-width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-width: initial;
+    background-color: rgba(255, 255, 255, 0);
     height: auto;
-    min-width: 100px;
   }
 }
 </style>

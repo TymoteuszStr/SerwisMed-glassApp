@@ -60,7 +60,7 @@ export default {
     color: rgb(7, 70, 95);
   }
 }
-@media (max-width: 1280px) {
+@media (max-width: 1024px) {
   .textWrapper {
     background: linear-gradient(
       to right bottom,
@@ -69,15 +69,14 @@ export default {
     );
     top: auto;
     left: 0;
-    width: 80vw;
-    height: auto;
+    height: 400px;
     margin: 0;
-    padding:10px;
+    text-align: center;
+    overflow-y: scroll;
 
     .text {
-      height: auto;
       margin: 0;
-      padding: 10px 0;
+      padding: 0px 15px;
       font-size: 18px;
       font-weight: 400;
       color: rgb(13, 91, 122);

@@ -1,6 +1,6 @@
 <template>
   <div class="glass">
-    <Dashboard @navNr="setCurrentPage" />
+    <Dashboard class="dashboard" @navNr="setCurrentPage" />
     <Description v-if="showText" :textNr="currentPage" />
   </div>
 </template>
@@ -12,16 +12,17 @@ import Description from "@/components/Description.vue";
 export default {
   name: "Glass",
   components: {
-    Dashboard,Description
+    Dashboard,
+    Description,
   },
   setup() {
     let currentPage = ref(0);
     const setCurrentPage = ($event) => {
       currentPage.value = $event;
     };
-    const showText = window.innerWidth >=1280? true:false
+    const showText = window.innerWidth >= 1280 ? true : false;
 
-    return { setCurrentPage,currentPage,showText };
+    return { setCurrentPage, currentPage, showText };
   },
 };
 </script>
@@ -42,9 +43,13 @@ export default {
   backdrop-filter: blur(24px);
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1024px) {
   .glass {
-    width: 80vw;
+    width: 80%;
+
+    .dashboard {
+      width: 100%;
+    }
   }
 }
 </style>
