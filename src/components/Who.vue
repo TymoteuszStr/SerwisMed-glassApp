@@ -2,7 +2,7 @@
   <div class="who">
     <div class="who__picture"></div>
     <h2 class="who__name">Maria Stróżniak</h2>
-    <span class="who__subName">mgr pielęgnierstwa</span>
+    <span class="who__subName">mgr pielęgniarstwa</span>
   </div>
 </template>
 

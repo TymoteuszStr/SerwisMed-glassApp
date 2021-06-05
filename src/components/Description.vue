@@ -1,6 +1,9 @@
 <template>
   <div class="textWrapper">
-    <p class="text" v-for="(item, index) in text" :key="index">{{ item }}</p>
+    <p class="text" v-for="(item, index) in text" :key="index">
+      <img class="syringe" src="@/assets/syringe.svg" />
+      {{ item }}
+    </p>
   </div>
 </template>
 
@@ -48,17 +51,28 @@ export default {
 .textWrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  margin: 100px 60px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px;
   overflow-y: auto;
+  align-items: flex-start;
   .text {
+    display: flex;
+    align-items: flex-start;
     position: relative;
     top: 0;
     left: 0;
     padding: 10px 0;
     font-size: 22px;
     font-weight: 600;
-    color: rgb(7, 70, 95);
+    color: #05668d;
+    .syringe {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
   }
 }
 @media (max-width: 959px) {
@@ -72,16 +86,14 @@ export default {
     left: 0;
     height: 400px;
     width: inherit;
-    margin: 0;
-    text-align: center;
+    text-align: flex-start;
     overflow-y: scroll;
-
+    padding: 0;
     .text {
       margin: 0;
-      padding: 0px 15px;
+      padding: 0px 50px;
       font-size: 18px;
       font-weight: 400;
-      color: rgb(13, 91, 122);
     }
   }
 }
