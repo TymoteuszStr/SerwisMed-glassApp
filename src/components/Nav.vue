@@ -41,7 +41,7 @@ export default {
     };
 
     const toggleMobileView = () => {
-      showText.value = window.innerWidth >= 960 ? true : false;
+      showText.value = window.innerWidth < 960 ? true : false;
     };
 
     window.addEventListener("resize", toggleMobileView);

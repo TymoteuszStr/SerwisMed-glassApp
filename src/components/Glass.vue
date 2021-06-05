@@ -24,7 +24,6 @@ export default {
 
     const toggleMobileView = () => {
       showText.value = window.innerWidth >= 960 ? true : false;
-      console.log("test");
     };
 
     window.addEventListener("resize", toggleMobileView);
