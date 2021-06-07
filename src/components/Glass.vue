@@ -31,9 +31,18 @@ export default {
     onMounted(() => {
       const glassCard = document.querySelector("#glass");
       glassCard.addEventListener("mousemove", (e) => {
-        let xAxis = (window.innerWidth / 2 - e.pageX) / 100;
-        let yAxis = (window.innerHeight / 2 - e.pageY) / 100;
+        let xAxis = (window.innerWidth / 2 - e.pageX) / 70;
+        let yAxis = (window.innerHeight / 2 - e.pageY) / 70;
         glassCard.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+      });
+
+      glassCard.addEventListener("mouseenter", (e) => {
+        glassCard.style.transition = "none";
+      });
+      glassCard.addEventListener("mouseleave", (e) => {
+        console.log("mouseleave");
+        glassCard.style.transition = "all 1s ease";
+        glassCard.style.transform = `rotateY(0deg) rotateX(0deg)`;
       });
     });
     return { setCurrentPage, currentPage, showText };
