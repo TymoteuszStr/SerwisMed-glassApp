@@ -89,11 +89,22 @@ export default {
     text-align: flex-start;
     overflow-y: scroll;
     padding: 0;
+    border-end-end-radius: 10px;
+    border-end-start-radius: 10px;
+
     .text {
       margin: 0;
-      padding: 0px 50px;
-      font-size: 18px;
+      padding: 0px 20px;
+      font-size: 16px;
       font-weight: 400;
+      min-width: 320px;
+      max-width: 330px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: start;
+      &:last-child {
+        letter-spacing: 0px;
+      }
     }
   }
 }

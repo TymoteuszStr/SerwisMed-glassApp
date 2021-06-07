@@ -1,5 +1,5 @@
 <template>
-  <div class="glass">
+  <div class="glass" id="glass">
     <Dashboard class="dashboard" @navNr="setCurrentPage" />
     <Description v-if="showText" :textNr="currentPage" />
   </div>
@@ -7,7 +7,7 @@
 
 <script>
 import Dashboard from "@/components/Dashboard.vue";
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import Description from "@/components/Description.vue";
 export default {
   name: "Glass",
@@ -27,12 +27,22 @@ export default {
     };
 
     window.addEventListener("resize", toggleMobileView);
+
+    onMounted(() => {
+      const glassCard = document.querySelector("#glass");
+      glassCard.addEventListener("mousemove", (e) => {
+        let xAxis = (window.innerWidth / 2 - e.pageX) / 100;
+        let yAxis = (window.innerHeight / 2 - e.pageY) / 100;
+        glassCard.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+      });
+    });
     return { setCurrentPage, currentPage, showText };
   },
 };
 </script>
 <style lang="scss" scoped="true">
 .glass {
+  transform-style: preserve-3d;
   display: flex;
   min-height: 80vh;
   width: 70%;
@@ -47,12 +57,14 @@ export default {
   z-index: 10;
   backdrop-filter: blur(24px);
   max-height: 80vh;
+  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 959px) {
   .glass {
     width: 80%;
     max-height: initial;
+    min-height: 70vh;
     .dashboard {
       width: 100%;
       max-height: initial;

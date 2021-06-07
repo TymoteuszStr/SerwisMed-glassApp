@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
     <Glass />
-    <Circle :size="300" style="bottom: 50px; left: 150px" />
-    <Circle :size="340" style="top: 50px; right: 150px" />
+    <Circle :size="300" style="bottom: 50px; left: 5%" />
+    <Circle :size="340" style="top: 50px; right: 5%" />
   </div>
 </template>
 
@@ -23,5 +23,6 @@ export default {
   background: linear-gradient(to right top, #2596be, #6cdbeb);
   display: flex;
   align-items: center;
+  max-width: 100vw;
 }
 </style>
